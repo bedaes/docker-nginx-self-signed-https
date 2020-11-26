@@ -1,7 +1,7 @@
 FROM nginx:1.13
 
-COPY cert.crt /etc/nginx/cert.crt
-COPY cert.key /etc/nginx/cert.key
+COPY certs/localhost.crt /etc/nginx/localhost.crt
+COPY certs/localhost.key /etc/nginx/localhost.key
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
 COPY run.sh /run.sh
 
