@@ -13,6 +13,11 @@
 # npm install axios
 ./get.js
 
+# check TLS connection using OpenSSL
+echo | openssl s_client -showcerts -connect localhost:443
+
+# check TLS connection using curl
+curl https://localhost
 ```
 
 Note: This is running the container on the host network. It is required that
