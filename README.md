@@ -9,6 +9,10 @@
 # run nginx
 ./server.sh
 
+# install root CA
+sudo cp certs/ca/root-ca.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+
 # try GET request using node
 # npm install axios
 ./get.js
@@ -18,6 +22,10 @@ echo | openssl s_client -showcerts -connect localhost:443
 
 # check TLS connection using curl
 curl https://localhost
+
+# remove root CA
+sudo rm /usr/local/share/ca-certificates/root-ca.crt
+sudo update-ca-certificates --fresh
 ```
 
 Note: This is running the container on the host network. It is required that
